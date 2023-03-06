@@ -1,4 +1,4 @@
-import Logo from "./logo.png";
+import Logo from "./pictures/logo.png";
 
 function createElement(tag, className, text, IMGsource) {
   let element = document.createElement(`${tag}`);
