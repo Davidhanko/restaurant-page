@@ -1,1 +1,4 @@
-alert("HELLO!");
+import "./style.css";
+import { displayHome } from "./home";
+
+displayHome();
