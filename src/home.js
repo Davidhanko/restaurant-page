@@ -1,24 +1,13 @@
 import Logo from "./pictures/logo.png";
-
-function createElement(tag, className, text, IMGsource) {
-  let element = document.createElement(`${tag}`);
-  element.classList.add(`${className}`);
-  if (tag !== "img") {
-    element.textContent = `${text}`;
-  } else {
-    element.src = `${IMGsource}`;
-    element.alt = `${text}`;
-  }
-  return element;
-}
+import { createElement } from "./elementCreator";
 
 export function displayHome() {
   const contentDiv = document.querySelector("#content");
   // Creating navigation bar
-  let navBar = createElement("nav", "navigationBar", "");
+  const navBar = createElement("nav", "navigationBar", "");
   contentDiv.appendChild(navBar);
   //creating buttons
-  navBar.appendChild(createElement("button", "navButton", "Home"));
+  navBar.appendChild(createElement("button", "navButton-active", "Home"));
   navBar.appendChild(createElement("button", "navButton", "Menu"));
   navBar.appendChild(createElement("button", "navButton", "Contact"));
   //creating headline
