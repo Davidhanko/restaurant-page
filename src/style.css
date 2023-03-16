@@ -68,8 +68,8 @@ h1{
 }
 
 .menuItems>img{
-    width: 150px;
-    height: 150px;
+    width: clamp(5vw, 10vw, 15vw);
+    height: clamp(5vw, 10vw, 15vw);
     border-radius: 50%;
     margin-right: 10px;
     margin-left: 5px;
