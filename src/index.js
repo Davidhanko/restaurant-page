@@ -1,6 +1,7 @@
 import "./style.css";
 import { displayHome } from "./home";
 import { displayMenu } from "./menu";
+import { displayContact } from "./contact";
 
 const UILogic = (() => {
   const div = document.getElementById("content");
@@ -15,14 +16,18 @@ const UILogic = (() => {
     displayMenu();
     checkButtons();
   };
+  const createContact = () => {
+    displayContact();
+    checkButtons();
+  };
 
-  return { deleteUI, createHome, createMenu };
+  return { deleteUI, createHome, createMenu, createContact };
 })();
 
 function checkButtons() {
   const buttons = document.querySelectorAll(".navButton");
   buttons.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
+    btn.addEventListener("click", () => {
       switch (btn.textContent) {
         case "Home":
           UILogic.deleteUI();
@@ -32,11 +37,14 @@ function checkButtons() {
           UILogic.deleteUI();
           UILogic.createMenu();
           break;
-        default:
-          console.log(event.textContent);
+        case "Contact":
+          UILogic.deleteUI();
+          UILogic.createContact();
+          break;
       }
     });
   });
 }
+
 displayHome();
 checkButtons();
